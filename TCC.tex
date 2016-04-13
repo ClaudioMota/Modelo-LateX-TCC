@@ -1,0 +1,203 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Modelo DCOMP/TCC da Universidade Federal de Sergipe %%
+%%%%%%%%%1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------
+% Baseado no modelo do DCOMP/PROCC da Universidade Federal de Sergipe
+% Ultima modificação: 13/04/2016
+% Colaboradores:
+%   <Desenvolvedores do modelo DCOMP/PROCC>
+%   Claudio Mota Oliveira (cmoliveira1000@hotmail.com)
+%-------------------------------------------------------------------
+
+\documentclass[a4paper,titlepage]{tcc_dcomp}
+\usepackage[brazil,english]{babel}
+\usepackage{procc,epsfig}
+\usepackage{times}
+\usepackage{verbatim}
+\usepackage{mathtools}
+\usepackage{amsmath,amsfonts,amsthm}
+
+\newcommand{\etal}{et~al.}
+
+%-------------------------- Para usar acentuacaoo em sistemas ISO8859-1 ------------------------------------
+% Se estiver usando o Microsoft Windows ou linux com essa codificacao, descomente essa linhas abaixo
+% e comente as linhas referentes ao UTF8
+%\usepackage[latin1]{inputenc} 
+% Usar acentuacao em sistemas ISO8859-1, comentar a linha com  \usepackage[utf8x]{inputenc}
+%-----------------------------------------------------------------------------------------------------
+
+%-------------------------- Para usar acentuacao em sistemas UTF8 ------------------------------------
+% Para a maior parte das distribuicoes linux, usar a opcao utf8x (lembrar de comentar as linha referente a ISO8859-1 acima)
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%-----------------------------------------------------------------------------------------------------
+
+% usado nas tabelas
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{graphicx,url}
+\usepackage{subfig}
+\graphicspath{{Figuras/}}
+\usepackage{longtable} %tabelas longas, para tabelas que ultrapassam uma pagina
+%\input{psfig.sty}
+
+
+\usepackage{amssymb} %% Usando nas formulas matematicas
+
+
+% ----------------- Para inserir codigo fonte de linguagens de programacao no documento -------------
+\usepackage{listings}
+\lstset{numbers=left,
+stepnumber=1
+firstnumber=1,
+%numberstyle=\tiny,
+extendedchars=true,
+breaklines=true,
+frame=tb,
+basicstyle=\footnotesize,
+stringstyle=\ttfamily,
+showstringspaces=false
+}
+\renewcommand{\lstlistingname}{C\'odigo Fonte}
+\renewcommand{\lstlistlistingname}{Lista de C\'odigos Fonte}
+% ---------------------------------------------------------------------------------------------------
+
+%\selectlanguage{portuges}
+\sloppy
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Informacoes para a Pagina de Rosto
+%%
+\Titulo{INSIRA O TÍTULO DO SEU TCC AQUI}
+\Autor{INSIRA SEU NOME EM MAIÚSCULO AQUI}
+\Data{\today} % Data da Defesa por extenso
+\Ano{2016}
+\Orientador{Prof.(ª) Dr.(ª) Nome Orientador(a)} %Ex: Prof. Dr. João Farias
+\UniverOrientador{Universidade Federal de Sergipe (UFS)} %Universidade do orientador
+
+%Se possuir um professor co-orientador descomente essas duas linhas
+%\CoOrientador{Prof. Dr. Nome Co-orientador}
+%\UniverCoOrientador{Universidade Fictícia de Orientadores Brasileira (UFOB)}
+
+%Não utilizado
+%\priAvaliador{Prof. Dr. Nome do primeiro Avaliador}
+%\UniverpriAvaliador{Universidade Federal de Sergipe (UFS)}
+%\segAvaliador{Prof. Dr. Nome do segundo Avaliador}
+%\UniversegAvaliador{Universidade Federal de Sergipe (UFS)}
+
+\newpage
+\cleardoublepage
+
+\PaginadeRosto
+
+\newpage
+\cleardoublepage
+
+%[~debug] Verificar se existem esta parte do documento, salvo engano existe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Dedicatoria
+%% Na dissertação retire o simbolo % do bloco abaixo e crie o arquivo dedicatoria.tex 
+%%
+%\begin{dedicatoria}
+%\input{dedicatoria.tex}
+%\end{dedicatoria}
+
+\newpage
+\cleardoublepage
+
+%[~debug] Verificar se existem esta parte do documento, salvo engano existe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Agradecimentos
+%% Na dissertação retire o simbolo % do bloco abaixo e crie o arquivo agradecimentos.tex 
+%%
+%\begin{agradecimentos}
+%\input{agradecimentos.tex}
+%\end{agradecimentos}
+
+\newpage
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Resumo
+%% Na dissertação retire o simbolo % do bloco abaixo e crie o arquivo resumo.tex 
+%%
+\begin{resumo} 
+\input{Documentos/Resumo.tex}
+\end{resumo}
+
+\newpage
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Abstract
+%% Na dissertação retire o simbolo % do bloco abaixo e crie o arquivo abstract.tex 
+%%
+\begin{abstract}
+\input{Documentos/Abstract.tex}
+\end{abstract}
+
+\newpage
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lista de Figuras, Lista de Tabelas, Lista de Siglas e Sumario
+%%
+\selectlanguage{brazil}
+
+\listoffigures
+\listoftables
+\ListadeSiglas
+%\lstlistoflistings %lista de codigos fonte - Para inserir a listagem de codigos fonte
+\renewcommand{\contentsname}{Sumário}
+\Sumario
+
+\Introducao
+
+\newpage
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Definicao do cabecalho: secao do lado esquerdo e numero da pagina do lado direito
+\pagestyle{fancy}
+\addtolength{\headwidth}{\marginparsep}\addtolength{\headwidth}{\marginparwidth}\headwidth = \textwidth
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}\lhead[\fancyplain{}{\bfseries\thepage}]%
+	     {\fancyplain{}{\emph{\rightmark}}}\rhead[\fancyplain{}{\bfseries\leftmark}]%
+             {\fancyplain{}{\bfseries\thepage}}\cfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hifenizacao - Colocar lista de palavras que nao devem ser separadas e que 
+% nao estao no dicionario portugues.
+% As palavras do dicionario portugues ja sao separadas corretamente pelo lateX
+%
+\hyphenation{ Hardware Software }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Corpo do TCC:
+\input{Documentos/Exemplo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Troca do termo Bibliografia para Referencia.
+%% Adicao da pagina da Referencia no Sumario
+\addcontentsline{toc}{chapter}{Referências}
+\renewcommand{\bibname}{REFERÊNCIAS} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliografia
+%% Coloque suas referencias no arquivo referencias.bib
+\bibliographystyle{plain} % estilo de bibliografia   plain,unsrt,alpha,abbrv.
+%\nocite{*} %coloca todas as referências
+\bibliography{Documentos/Referencias} % arquivos com as entradas bib.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Apendice
+%% Caso seja necessario algum apendice, descomente a linha abaixo e crie o arquivo apendices.tex.
+\appendix
+%\input{apendices}
+
+\end{document}

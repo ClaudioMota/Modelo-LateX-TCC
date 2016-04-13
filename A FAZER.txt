@@ -1,0 +1,2 @@
+->Tornar o documento genérico para os cursos (EC, CC, SI).
+->Compatibilizar com o padrão da ABNT se necessário.
