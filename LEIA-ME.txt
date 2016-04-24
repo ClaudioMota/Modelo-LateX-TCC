@@ -1,11 +1,14 @@
 ----------------------------------------
-1. Instruções de instalação do LateX
+1. Instruções de instalacao do LaTeX
 ----------------------------------------
-Aqui será apresentado como instalar o LateX
+
+Aqui será apresentado como instalar o LaTeX
 em diferentes sistemas operacionais.
 
+Acesse o site: https://latex-project.org/ftp.html
+
 ----------------------------------------
-1.1 LinuX
+1.1 Linux
 ----------------------------------------
 
 
@@ -26,5 +29,3 @@ em diferentes sistemas operacionais.
 2. Notações utilizadas
 ----------------------------------------
 %[~debug] : Indica mensagens para os colaboradores do projeto do GitHub.
-
-

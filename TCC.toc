@@ -1,4 +1,0 @@
-\select@language {english}
-\select@language {brazil}
-\contentsline {chapter}{\numberline {1}Conhecendo o LateX}{1}
-\contentsline {chapter}{Refer\IeC {\^e}ncias}{1}

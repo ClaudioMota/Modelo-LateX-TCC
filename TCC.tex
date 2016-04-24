@@ -1,94 +1,132 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Modelo DCOMP/TCC da Universidade Federal de Sergipe %%
 %%%%%%%%%1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------------------------------------------------------
+
+% ----- ----- ----- ----- Informacoes importantes ----- ----- ----- ----- %
 % Baseado no modelo do DCOMP/PROCC da Universidade Federal de Sergipe
-% Ultima modificação: 13/04/2016
+% Ultima modificacao: 24/04/2016
 % Colaboradores:
 %   <Desenvolvedores do modelo DCOMP/PROCC>
 %   Claudio Mota Oliveira (cmoliveira1000@hotmail.com)
-%-------------------------------------------------------------------
+%	Fernando Melo Nascimento (nascimentofm@ufs.br)
+% ----- ----- ----- ----- Informacoes importantes ----- ----- ----- ----- %
 
+
+
+% ----- ----- ----- ----- Pacotes basicos ----- ----- ----- ----- %
 \documentclass[a4paper,titlepage]{tcc_dcomp}
 \usepackage[brazil,english]{babel}
 \usepackage{procc,epsfig}
 \usepackage{times}
 \usepackage{verbatim}
 \usepackage{mathtools}
+% Para formulas matematicas
+\usepackage{amssymb}
 \usepackage{amsmath,amsfonts,amsthm}
+% ----- ----- ----- ----- Pacotes basicos ----- ----- ----- ----- %
 
+
+
+% ----- ----- ----- ----- Comandos para abreviacoes latinas ----- ----- ----- ----- %
 \newcommand{\etal}{et~al.}
+\newcommand{\ie}{i.~e.}
+\newcommand{\eg}{e.~g.}
+% ----- ----- ----- ----- Comandos para abreviacoes latinas ----- ----- ----- ----- %
 
-%-------------------------- Para usar acentuacaoo em sistemas ISO8859-1 ------------------------------------
-% Se estiver usando o Microsoft Windows ou linux com essa codificacao, descomente essa linhas abaixo
-% e comente as linhas referentes ao UTF8
+
+
+% ----- ----- ----- ----- Pacotes de acentuacao em sistemas ISO8859-1 ----- ----- ----- ----- %
+% Se estiver usando o Microsoft Windows ou linux com essa codificacao, 
+% descomente essa linhas abaixo e comente as linhas referentes ao UTF8
 %\usepackage[latin1]{inputenc} 
 % Usar acentuacao em sistemas ISO8859-1, comentar a linha com  \usepackage[utf8x]{inputenc}
-%-----------------------------------------------------------------------------------------------------
+% ----- ----- ----- ----- Pacotes de acentuacao em sistemas ISO8859-1 ----- ----- ----- ----- %
 
-%-------------------------- Para usar acentuacao em sistemas UTF8 ------------------------------------
-% Para a maior parte das distribuicoes linux, usar a opcao utf8x (lembrar de comentar as linha referente a ISO8859-1 acima)
+
+
+% ----- ----- ----- ----- Pacotes de acentuacao em sistemas UTF8 ----- ----- ----- ----- %
+% Para a maior parte das distribuicoes linux, usar a opcao utf8x 
+% Lembrar de comentar as linha referente a ISO8859-1 acima!
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 %\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%-----------------------------------------------------------------------------------------------------
+% ----- ----- ----- ----- Pacotes de acentuacao em sistemas UTF8 ----- ----- ----- ----- %
 
-% usado nas tabelas
+
+
+% ----- ----- ----- ----- Pacotes para tabelas e figuras ----- ----- ----- ----- %
 \usepackage{multirow}
 \usepackage{float}
 \usepackage{graphicx,url}
 \usepackage{subfig}
+\usepackage{tabulary}
+% Para tabelas longas (que ultrapassam uma pagina)
+\usepackage{longtable}
 \graphicspath{{Figuras/}}
-\usepackage{longtable} %tabelas longas, para tabelas que ultrapassam uma pagina
 %\input{psfig.sty}
+% ----- ----- ----- ----- Pacotes para tabelas e figuras ----- ----- ----- ----- %
 
 
-\usepackage{amssymb} %% Usando nas formulas matematicas
 
-
-% ----------------- Para inserir codigo fonte de linguagens de programacao no documento -------------
+% ----- ----- ----- ----- Pacotes para codigo fonte ----- ----- ----- ----- %
 \usepackage{listings}
-\lstset{numbers=left,
-stepnumber=1
-firstnumber=1,
-%numberstyle=\tiny,
-extendedchars=true,
-breaklines=true,
-frame=tb,
-basicstyle=\footnotesize,
-stringstyle=\ttfamily,
-showstringspaces=false
+\lstset{
+	numbers          = left,
+	stepnumber       = 1
+	firstnumber      = 1,
+	%numberstyle      = \tiny,
+	extendedchars    = true,
+	breaklines       = true,
+	frame            = tb,
+	basicstyle       = \footnotesize,
+	stringstyle      = \ttfamily,
+	showstringspaces = false
 }
 \renewcommand{\lstlistingname}{C\'odigo Fonte}
 \renewcommand{\lstlistlistingname}{Lista de C\'odigos Fonte}
-% ---------------------------------------------------------------------------------------------------
+% ----- ----- ----- ----- Pacotes para codigo fonte ----- ----- ----- ----- %
+
+
 
 %\selectlanguage{portuges}
 \sloppy
 
-\begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Informacoes para a Pagina de Rosto
-%%
-\Titulo{INSIRA O TÍTULO DO SEU TCC AQUI}
-\Autor{INSIRA SEU NOME EM MAIÚSCULO AQUI}
-\Data{\today} % Data da Defesa por extenso
+
+
+\begin{document}
+
+
+% ----- ----- ----- ----- Informacoes para pagina de rosto ----- ----- ----- ----- %
+% Titulo do trabalho em caixa alta
+\Titulo{INSERIR TITULO EM MAIUSCULO}
+% Nome do formando em caixa alta
+\Autor{INSERIR NOME COMPLETO EM MAIUSCULO}
+% Data da defesa por extenso
+\Data{\today}
+% Ano da defesa
 \Ano{2016}
-\Orientador{Prof.(ª) Dr.(ª) Nome Orientador(a)} %Ex: Prof. Dr. João Farias
-\UniverOrientador{Universidade Federal de Sergipe (UFS)} %Universidade do orientador
+% Nome do(a) orientador(a)
+\Orientador{Prof. Dr. (Me.) Nome do professor || Profa. Dra. (Ma.) Nome da professora}
+% Universidade do(a) orientador(a)
+\UniverOrientador{Universidade Federal de Sergipe (UFS)}
 
 %Se possuir um professor co-orientador descomente essas duas linhas
 %\CoOrientador{Prof. Dr. Nome Co-orientador}
 %\UniverCoOrientador{Universidade Fictícia de Orientadores Brasileira (UFOB)}
 
-%Não utilizado
+%Nao utilizado
 %\priAvaliador{Prof. Dr. Nome do primeiro Avaliador}
 %\UniverpriAvaliador{Universidade Federal de Sergipe (UFS)}
 %\segAvaliador{Prof. Dr. Nome do segundo Avaliador}
 %\UniversegAvaliador{Universidade Federal de Sergipe (UFS)}
+% ----- ----- ----- ----- Informacoes para pagina de rosto ----- ----- ----- ----- %
 
+
+
+% ----- ----- ----- ----- Pagina de rosto ----- ----- ----- ----- %
 \newpage
 \cleardoublepage
 
@@ -96,72 +134,86 @@ showstringspaces=false
 
 \newpage
 \cleardoublepage
+% ----- ----- ----- ----- Pagina de rosto ----- ----- ----- ----- %
 
-%[~debug] Verificar se existem esta parte do documento, salvo engano existe
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Dedicatoria
-%% Na dissertação retire o simbolo % do bloco abaixo e crie o arquivo dedicatoria.tex 
-%%
+
+
+% ----- ----- ----- ----- Dedicatoria ----- ----- ----- ----- %
+%[~debug] Verificar se existe esta parte do documento
 %\begin{dedicatoria}
-%\input{dedicatoria.tex}
+%\input{Documentos/Dedicatoria}
 %\end{dedicatoria}
 
 \newpage
 \cleardoublepage
+% ----- ----- ----- ----- Dedicatoria ----- ----- ----- ----- %
 
-%[~debug] Verificar se existem esta parte do documento, salvo engano existe
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Agradecimentos
-%% Na dissertação retire o simbolo % do bloco abaixo e crie o arquivo agradecimentos.tex 
-%%
+
+
+% ----- ----- ----- ----- Agradecimentos ----- ----- ----- ----- %
+%[~debug] Verificar se existe esta parte do documento
 %\begin{agradecimentos}
-%\input{agradecimentos.tex}
+%\input{Documentos/Agradecimentos}
 %\end{agradecimentos}
 
 \newpage
 \cleardoublepage
+% ----- ----- ----- ----- Agradecimentos ----- ----- ----- ----- %
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Resumo
-%% Na dissertação retire o simbolo % do bloco abaixo e crie o arquivo resumo.tex 
-%%
+
+
+% ----- ----- ----- ----- Resumo ----- ----- ----- ----- %
 \begin{resumo} 
-\input{Documentos/Resumo.tex}
+\input{Documentos/Resumo}
 \end{resumo}
 
 \newpage
 \cleardoublepage
+% ----- ----- ----- ----- Resumo ----- ----- ----- ----- %
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Abstract
-%% Na dissertação retire o simbolo % do bloco abaixo e crie o arquivo abstract.tex 
-%%
+
+
+% ----- ----- ----- ----- Abstract ----- ----- ----- ----- %
 \begin{abstract}
-\input{Documentos/Abstract.tex}
+\input{Documentos/Abstract}
 \end{abstract}
 
 \newpage
 \cleardoublepage
+% ----- ----- ----- ----- Abstract ----- ----- ----- ----- %
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Lista de Figuras, Lista de Tabelas, Lista de Siglas e Sumario
-%%
+
+
+% ----- ----- ----- ----- Listas de Figuras, Tabelas, Siglas, Codigos-fonte e Sumario ----- ----- ----- ----- %
 \selectlanguage{brazil}
 
+% Lista de Figuras
 \listoffigures
+% Lista de Tabelas
 \listoftables
+% Lista de Siglas
 \ListadeSiglas
-%\lstlistoflistings %lista de codigos fonte - Para inserir a listagem de codigos fonte
-\renewcommand{\contentsname}{Sumário}
+% Lista de Codigos-fonte
+%\lstlistoflistings
+\renewcommand{\contentsname}{Sum\'ario}
 \Sumario
+% ----- ----- ----- ----- Listas de Figuras, Tabelas, Siglas, Codigos-fonte e Sumario ----- ----- ----- ----- %
 
+
+
+% ----- ----- ----- ----- Introducao ----- ----- ----- ----- %
 \Introducao
 
 \newpage
 \cleardoublepage
+% ----- ----- ----- ----- Introducao ----- ----- ----- ----- %
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Definicao do cabecalho: secao do lado esquerdo e numero da pagina do lado direito
+
+
+% ----- ----- ----- ----- Estilo do Cabecalho e Hifenizacao ----- ----- ----- ----- %
+% Definicoes do cabecalho:
+% Secao do lado esquerdo
+% Numero da pagina do lado direito
 \pagestyle{fancy}
 \addtolength{\headwidth}{\marginparsep}\addtolength{\headwidth}{\marginparwidth}\headwidth = \textwidth
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -169,35 +221,45 @@ showstringspaces=false
 	     {\fancyplain{}{\emph{\rightmark}}}\rhead[\fancyplain{}{\bfseries\leftmark}]%
              {\fancyplain{}{\bfseries\thepage}}\cfoot{}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Hifenizacao - Colocar lista de palavras que nao devem ser separadas e que 
-% nao estao no dicionario portugues.
-% As palavras do dicionario portugues ja sao separadas corretamente pelo lateX
-%
+% Hifenizacao - Colocar lista de palavras que nao devem ser separadas 
+% e que nao estao no dicionario portugues.
+% Palavras do dicionario portugues sao separadas corretamente pelo lateX
 \hyphenation{ Hardware Software }
+% ----- ----- ----- ----- Estilo do Cabecalho e Hifenizacao ----- ----- ----- ----- %
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Corpo do TCC:
+
+
+% ----- ----- ----- ----- Capitulos ----- ----- ----- ----- %
 \input{Documentos/Exemplo}
+%\input{Documentos/Introducao}
+%\input{Documentos/Conceitos}
+%\input{Documentos/Metodologia}
+%\input{Documentos/Resultados}
+%\input{Documentos/Conclusao}
+% ----- ----- ----- ----- Capitulos ----- ----- ----- ----- %
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Troca do termo Bibliografia para Referencia.
-%% Adicao da pagina da Referencia no Sumario
-\addcontentsline{toc}{chapter}{Referências}
-\renewcommand{\bibname}{REFERÊNCIAS} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Bibliografia
-%% Coloque suas referencias no arquivo referencias.bib
-\bibliographystyle{plain} % estilo de bibliografia   plain,unsrt,alpha,abbrv.
-%\nocite{*} %coloca todas as referências
-\bibliography{Documentos/Referencias} % arquivos com as entradas bib.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Apendice
-%% Caso seja necessario algum apendice, descomente a linha abaixo e crie o arquivo apendices.tex.
+% ----- ----- ----- ----- Bibliografia ----- ----- ----- ----- %
+% Troca do termo Bibliografia para Referencia.
+\renewcommand{\bibname}{REFER\^ENCIAS}
+% Adicao da pagina da Referencia no Sumario
+\addcontentsline{toc}{chapter}{Refer\^encias}
+% Estilo de bibliografia: plain, unsrt, alpha, abbrv, etc.
+% Para mais, visite: https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Bibliography_styles
+\bibliographystyle{plain}
+% Coloca todas as referencias
+%\nocite{*} 
+% Arquivos com as entradas bib.
+\bibliography{Documentos/Referencias}
+% ----- ----- ----- ----- Bibliografia ----- ----- ----- ----- %
+
+
+
+% ----- ----- ----- ----- Apendice ----- ----- ----- ----- %
+% Caso haja algum apendice, descomente a linha abaixo e crie o arquivo apendices.tex.
 \appendix
-%\input{apendices}
+%\input{Documentos/Apendices.tex}
+% ----- ----- ----- ----- Apendice ----- ----- ----- ----- %
 
 \end{document}
